@@ -2,12 +2,17 @@ import './style.scss';
 import { useState } from 'react';
 
 function App() {
-	const [Degree, setDegree] = useState(0);
+	const [colors, setcolors] = useState(['red', 'green', 'blue']);
+	const newColors = [...colors];
+	newColors[0] = 'hotpink';
 	return (
 		<>
-			<button onClick={() => setDegree(Degree - 45)}>왼쪽으로 회전</button>
-			<button onClick={() => setDegree(Degree + 45)}>오른쪽으로 회전</button>
-			<article style={{ transform: `rotate(${Degree}deg)` }}>{Degree}</article>
+			{colors.map((color, idx) => (
+				<button style={{ backgroundColor: color }} key={idx}>
+					{color}
+				</button>
+			))}
+			<button onClick={() => setcolors(newColors)}>색상변경</button>
 		</>
 	);
 }

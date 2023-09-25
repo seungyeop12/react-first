@@ -2,11 +2,12 @@ import './style.scss';
 import { useState } from 'react';
 
 function App() {
-	const [name, setname] = useState('David');
+	const [Degree, setDegree] = useState(0);
 	return (
 		<>
-			<h1>{name}</h1>
-			<button onClick={() => setname('Andy')}>이름변경</button>
+			<button onClick={() => setDegree(Degree - 45)}>왼쪽으로 회전</button>
+			<button onClick={() => setDegree(Degree + 45)}>오른쪽으로 회전</button>
+			<article style={{ transform: `rotate(${Degree}deg)` }}>{Degree}</article>
 		</>
 	);
 }

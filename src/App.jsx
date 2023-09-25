@@ -1,18 +1,16 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
-import List from './components/List';
-import Popup from './components/Popup';
 import './style.scss';
+import { useState } from 'react';
 
 function App() {
-	let isPop = true;
-	let isFooter = false;
+	console.log('app');
+	let [num, setnum] = useState(0);
+	console.log(num);
+
 	return (
 		<>
-			<Header />
-			{isFooter && <Footer />}
-			{isPop ? <Popup /> : null}
-			<List />
+			<h1>{num}</h1>
+			<button onClick={() => setnum(--num)}>minus</button>
+			<button onClick={() => setnum(++num)}>plus</button>
 		</>
 	);
 }

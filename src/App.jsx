@@ -2,15 +2,11 @@ import './style.scss';
 import { useState } from 'react';
 
 function App() {
-	console.log('app');
-	let [num, setnum] = useState(0);
-	console.log(num);
-
+	const [name, setname] = useState('David');
 	return (
 		<>
-			<h1>{num}</h1>
-			<button onClick={() => setnum(--num)}>minus</button>
-			<button onClick={() => setnum(++num)}>plus</button>
+			<h1>{name}</h1>
+			<button onClick={() => setname('Andy')}>이름변경</button>
 		</>
 	);
 }

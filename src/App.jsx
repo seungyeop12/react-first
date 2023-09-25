@@ -20,7 +20,12 @@ import './style.scss';
 
 function App() {
 	let arr = ['reading', 'game', 'cook'];
-	let newarr = arr;
+	//전개연산자 (Spread Operator): heap메모리에 있는 값을 물리적으로 꺼내서 전개
+	let newarr = [...arr];
+	newarr[0] = 'exercise';
+	console.log(newarr);
+	console.log(arr);
+
 	newarr[0] = 'exercise';
 	console.log(newarr);
 	console.log(arr);

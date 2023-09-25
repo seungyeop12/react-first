@@ -1,5 +1,17 @@
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Popup from './components/Popup';
+import './style.scss';
+
 function App() {
-	return <h1>Hello</h1>;
+	let isPop = false;
+	return (
+		<>
+			<Header />
+			<Footer />
+			{isPop ? <Popup /> : null}
+		</>
+	);
 }
 
 export default App;
@@ -32,4 +44,5 @@ export default App;
  - export 로 내보내야지 다른 컴포넌트에서 불러올 수 있음
  - 하나의 컴포넌트 함수는 단인 JSX를 리턴 가능
  - 복수개의 JSX를 리턴하고 싶을때는 wrapping El로 묶어서 그룹화한뒤 리턴
+ - 중첩된 Element노드를 생성하지 않고 복수개의 JSX를 리턴하고 싶을때는 <> </> Fragment로 감싸줌
 */
